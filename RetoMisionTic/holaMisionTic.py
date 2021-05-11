@@ -2,7 +2,7 @@
 #que utilice variables y operadores el siguiente mensaje: 
 #"Hola Misión TIC 2022... soy <nombre del estudiante>"
 
-
+#Funcion que imprime el saludo de mision tic
 def saludoMisionTic(nombre):
     print("Hola Misión TIC 2022, Yo soy", nombre)
     if nombre == "Ingrid":
