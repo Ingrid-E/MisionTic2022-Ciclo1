@@ -21,7 +21,8 @@ composicion = variables[0]
 ecogenicidad = variables[1]
 forma = variables[2]
 margen = variables[3]
-focosE = {variables[4],variables[5],variables[6],variables[7]}
+focosE = [variables[4],variables[5],variables[6],variables[7]]
+aaf = variables[8]
 
 composiciones = {
     "C1": 0,
@@ -49,28 +50,43 @@ margenes = {
     "M4": 1.5
 }
 
-focosErcogenicos = {0,0.5,1,1.5}
+focosErcogenicos = [0,0.5,1,1.5]
 
 def sumatoriaFocos():
     sumatoria = 0
-    for x in focosE:
-        if focosE[x] == 1:
+    for x in range (0,len(focosE)):
+        if focosE[x] == "1":
             sumatoria = sumatoria + focosErcogenicos[x]
     return sumatoria
 
 def clasificacion():
     
-    puntaje = composiciones[composicion] + ecogenicidades[ecogenicidad] + formas[forma] + margenes[margen] + sumatoriaFocos
-    if puntaje == 0 | puntaje < 1:
+    puntaje = composiciones[composicion] + ecogenicidades[ecogenicidad] + formas[forma] + margenes[margen] + sumatoriaFocos()
+    if puntaje == 0 and puntaje < 1:
         print("Benigno, no AAF")
-    elif puntaje >= 1 | puntaje < 1.5:
+    elif puntaje >= 1 and puntaje < 1.5:
         print("No sospechoso, no AAF")
-    elif puntaje >= 1.5 | puntaje < 2:
-        print("Levemente sospechoso")
-    elif puntaje >= 2 | puntaje < 3:
-        print("Moderamente sospechoso")
-    elif puntaje >= 3:
-        print("Altamente sospechoso")
+    elif puntaje >= 1.5 and puntaje < 2:
+        calificacionAAF("Levemente sospechoso")
+    elif puntaje >= 2 and puntaje <= 3:
+        calificacionAAF("Moderadamente sospechoso")
+    elif puntaje > 3:
+        calificacionAAF("Altamente sospechoso")
+
+def calificacionAAF(tipo):
+
+    if tipo == "Levemente sospechoso":
+        if int(aaf) >= 2.5: print(tipo + ", AAF")
+        elif int(aaf) <2.5: print(tipo + ", seguimiento")
+    elif tipo == "Moderadamente sospechoso":
+        if int(aaf) >= 1.5: print(tipo + ", AAF")
+        elif int(aaf) < 1.5: print(tipo + ", seguimiento")
+    elif tipo == "Altamente sospechoso":
+        if int(aaf) >=1: print(tipo + ", AAF")
+        elif int(aaf) < 1: print(tipo + ", seguimiento")
+
+clasificacion()
+
 
 
 

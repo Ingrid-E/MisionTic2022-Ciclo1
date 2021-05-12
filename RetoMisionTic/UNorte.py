@@ -70,7 +70,6 @@ def puntajeCandidato():
     elif resultado >= 0.5 :
         print("El candidato continua en el proceso de seleccion")
 
-puntajeCandidato()
 
 
 
