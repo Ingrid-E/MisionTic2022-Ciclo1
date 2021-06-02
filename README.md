@@ -11,7 +11,7 @@ Cuando se desea encontrar uno o varios objetos desconocidos.
 
 Para solucionar un problema debemos saber que objetos conocemos y las relaciones entre ellos.
 
-##### Tipos de problemas:
+#### Tipos de problemas:
 *   Condicionado: Información necesaria para la solución.
 *   Mal Condicionados: Sin información necesarias o respuesta sujeta a opinión.
     *   Sentimientos, emociones, cultura, etc....
@@ -29,18 +29,18 @@ Problemas con secuencia finita de tareas bien definidas, para que desde una entr
 
 **Programado**: Descripción de la secuencia finita para que el computador solucione el problema.
 
-##### Caracteristicas de un algoritmo:
+#### Caracteristicas de un algoritmo:
 *   Precisión
 *   Determinismo
 *   Finitud
 
-##### Esta conformado por:
+#### Esta conformado por:
 *   Datos: Información
 *   Instrucciones: Las acciones
 *   Estructuras de control: El orden de ejecución
 
-##### Recursos
-*   Tiempo: Tiempo definido para ejecutar la operación. 
+#### Recursos
+*   Tiempo: Tiempo definido para ejecutar la operación.
     *   Tiempo = tiempo * operaciones básicas
 *   Espacio: Memoria que debe mantener
     *   S = numero de bytes * variables del algoritmo
