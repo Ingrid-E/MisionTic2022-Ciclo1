@@ -60,5 +60,5 @@ Los programas necesitan ser ejecutados de manera rápida, para esto necesitan al
 
 Los algoritmos son una parte esencial de la programación.
 
-![Clase1](Imagenes\MisionTic_Clase1.jpg)
+![Clase1](/Imagenes/MisionTic_Clase1.jpg)
 
