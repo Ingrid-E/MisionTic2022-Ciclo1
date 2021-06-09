@@ -1,3 +1,8 @@
 {
-    "cSpell.language": ",es"
+    "cSpell.language": ",es",
+    "cSpell.words": [
+        "categoria",
+        "floculante"
+    ],
+    "python.formatting.provider": "yapf"
 }
