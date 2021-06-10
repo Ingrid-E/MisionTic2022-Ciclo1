@@ -38,3 +38,4 @@ def categoria_cloro(cloro):
 
 print(kilos_floculante, kilos_cal, litros_cloro)
 categoria_cloro(litros_cloro)
+
