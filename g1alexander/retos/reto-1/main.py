@@ -4,33 +4,27 @@
 """
 
 
-def validarValor(nombreValor, valor):
-    if valor < 0:
-        return print(f"tu {valor} del {nombreValor} no puede ser menor a 0")
-    return True
+def categorias(puntuacion):
+    if puntuacion < 0:
+        return "no puntuacion no puede ser menor a 0"
+    if puntuacion >= 0 and puntuacion <= 20:
+        return "uno"
+    elif puntuacion > 20 and puntuacion <= 30:
+        return "dos"
+    elif puntuacion > 30 and puntuacion <= 50:
+        return "tres"
+    elif puntuacion > 50:
+        return "cuatro"
 
 
-nombre = input("ingresa nombre del producto: ")
-cu = int(input("ingresa el costo unitario: "))
-pvp = int(input("ingresa el precio de venta al publico: "))
-uni_disp = int(input("ingresa las unidades disponibles: "))
+intentos = int(input())
+seg_puntuacion = intentos + intentos + 4
+ter_puntuacion = (intentos + seg_puntuacion) // 5
 
-producto = {"nombre": nombre, "cu": cu, "pvp": pvp, "uni_disp": uni_disp}
-print("-----------")
-
-
-validacion1 = validarValor("costo unitario", producto["cu"])
-validacion2 = validarValor("precio de venta", producto["pvp"])
-validacion3 = validarValor("unidades disponibles", producto["uni_disp"])
-
-if validacion1 and validacion2 and validacion3:
-    ganancias = (producto["pvp"] - producto["cu"]) * producto["uni_disp"]
-    print(
-        f"""Producto: {producto["nombre"]}
-CU: ${producto["cu"]}
-PVP: ${producto["pvp"]}
-Unidades Disponibles: ${producto["uni_disp"]}
-Ganancia: ${ganancias}"""
-    )
+if intentos < 0:
+    print("no puedes tener '-' intentos")
 else:
-    print("ingresa valores positivos")
+    print(
+        f"""{intentos} {seg_puntuacion} {ter_puntuacion}
+	{categorias(ter_puntuacion)}"""
+    )
