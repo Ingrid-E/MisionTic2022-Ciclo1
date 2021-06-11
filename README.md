@@ -6,4 +6,4 @@
 
 ## Input
 
-![Input](/Imagenes/Input.jpg)
+![Input](/Imagenes/Input.png)
