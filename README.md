@@ -4,3 +4,6 @@
 [Notas](/NotasDeClase/Clase1.md)
 ![Clase1](/Imagenes/MisionTic_Clase1.jpg)
 
+## Input
+
+![Input](/Imagenes/Input.jpg)

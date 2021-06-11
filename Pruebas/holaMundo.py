@@ -1,2 +1,1 @@
-print("Hola Mundo")
-
+entrada = input("ingresa un numero: ")

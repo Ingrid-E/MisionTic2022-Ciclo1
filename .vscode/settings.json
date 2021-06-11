@@ -1,8 +1,11 @@
 {
     "cSpell.language": ",es",
     "cSpell.words": [
+        "Dias",
+        "Equilatero",
         "categoria",
-        "floculante"
+        "floculante",
+        "numeros"
     ],
     "python.formatting.provider": "yapf"
 }
