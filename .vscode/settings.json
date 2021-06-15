@@ -4,8 +4,11 @@
         "Dias",
         "Equilatero",
         "categoria",
+        "composicion",
+        "ecogenicidad",
         "floculante",
-        "numeros"
+        "numeros",
+        "while"
     ],
     "python.formatting.provider": "yapf"
 }

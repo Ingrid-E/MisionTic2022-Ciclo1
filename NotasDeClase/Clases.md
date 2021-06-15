@@ -54,3 +54,57 @@ Un algoritmo de programación se escribe y puede ejecutarse en cualquier lenguaj
 Los programas necesitan ser ejecutados de manera rápida, para esto necesitan algoritmos ágiles que no tengan mucho tiempo de espera.
 
 Los algoritmos son una parte esencial de la programación.
+
+# Ciclos
+-15 de Junio 2021
+
+**Ciclos While**
+
+Estructura general
+```python
+while(condición):  # Una condición que en algún momento es falsa, oh se detiene en algún momento.
+    código...
+    break # Nos sirve para detener ciclos.
+```
+**Ejemplos:**
+
+1-
+```python
+    i = 0
+    while (i<=6):
+        print(i)
+        i += 1   # Cuando la i > 6 la condición se vuelve falsa.
+```
+2-
+```python
+    i=2
+    j=25
+    while i < j:
+        print(i,j,sep=", ") # Que hace sep=", " ?
+        i *= 2
+        j+= 10
+    print("the end")
+    print(i,j,sep=", ")
+```
+
+Como encontrar el mínimo número positivo representable por la máquina:
+
+```python
+
+def min_maquina():
+    Xo = 1.0
+    Xi = Xo / 2.0
+    while Xi > 0.0:
+        Xo = Xi
+        Xi = Xo / 2.0
+    return Xo
+
+print("El mínimo numero positivo", end=" ")
+print("En Esta maquina es", min_maquina())
+```
+```
+El minimo numero positivo en esta maquina es 5e-324
+```
+
+El ciclo do while no existe como tal en Python. Pero se puede recrear.
+Es mejor intentar no usar break, en ciclos while.
