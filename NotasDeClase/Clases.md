@@ -211,7 +211,7 @@ Si queremos el resultado de 2^5 llamamos la función con 5.
 -> dosElevado(5)
 
 **Pasos de la función:**
-
+```
 dosElevado(5):
     prod = 1
     for i in range (1,5+1): **Repetir 5 veces**
@@ -221,6 +221,6 @@ dosElevado(5):
         prod = 8 * 2 -> 16  **-4**
         prod = 16 * 2 -> 32 **-5 STOP**
     return **prod**
-
+```
 Como prod = 35, entonces nos retorna **35**
 
