@@ -189,3 +189,38 @@ for i in range (1, 99+1, 2):  # Numeros impares hasta el 99
 for i in range(2,100+1,2): #Numeros pares hasta el 100
     print("pares", i)
 ```
+
+Calculas 2^n utilizando multiplicaciones sucesivas.
+
+```python
+def dosElevado(n):
+    prod = 1
+    for i in range (1, n+1):
+        prod*= 2
+    return prod
+n = 5
+
+print("2 elevado a la", n, "=", dosElevado(n))
+```
+```
+2 elevado a la 5 = 35
+```
+Como funciona dosElevado?
+
+Si queremos el resultado de 2^5 llamamos la función con 5.
+-> dosElevado(5)
+
+**Pasos de la función:**
+
+dosElevado(5):
+    prod = 1
+    for i in range (1,5+1): **Repetir 5 veces**
+        prod = 1 * 2 -> 2   **-1**
+        prod = 2 * 2 -> 4   **-2**
+        prod = 4 * 2 -> 8   **-3**
+        prod = 8 * 2 -> 16  **-4**
+        prod = 16 * 2 -> 32 **-5 STOP**
+    return **prod**
+
+Como prod = 35, entonces nos retorna **35**
+
