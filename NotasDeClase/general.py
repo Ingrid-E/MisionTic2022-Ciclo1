@@ -19,9 +19,26 @@ def min_maquina():
         Xi = Xo / 2.0
     return Xo
 
-print("El minimo numero positivo", end=" ")
-print("en esta maquina es", min_maquina())
+#print("El minimo numero positivo", end=" ")
+#print("en esta maquina es", min_maquina())
 
-#Problemas
+# Ejemplos de while
 
-#Ejemplo
+
+i = 1
+anterior = 1
+nuevo = 1/2
+
+while nuevo < anterior:
+    penultimo = anterior
+    anterior = nuevo
+    i+=1
+    nuevo = 1/2**i
+
+#print(i-2,penultimo)
+
+#Ejemplo de for
+
+for i in range(10, 0,-1): #El tercer valor es el incremento
+    print(i)
+

@@ -108,3 +108,84 @@ El minimo numero positivo en esta maquina es 5e-324
 
 El ciclo do while no existe como tal en Python. Pero se puede recrear.
 Es mejor intentar no usar break, en ciclos while.
+
+Mas Ejemplos:
+
+```python
+dato = 1
+suma = 0
+i = 0
+
+while(dato !=0):
+    dato = int(input("Ingrese un numero entero: "))
+    suma += dato
+    i += 1
+i -=1 # fuera del cuerpo del while
+promedio = suma/i
+
+print(i, suma, promedio)
+print(type(promedio))
+
+````
+
+
+```python
+i = 1
+anterior = 1
+nuevo = 1/2
+
+while nuevo < anterior:
+    penultimo = anterior
+    anterior = nuevo
+    i+=1
+    nuevo = 1/2**i
+
+print(i-2,penultimo)
+
+```
+
+**Estudiar los incrementos de range en for**
+
+
+```python
+
+
+for i in range(0, 3): #El incremento por default es 0
+    print(i, end=" ") #-> 0 1 2
+
+for i in range(3, 0):
+    print(i, end=" ") # Nada
+
+for i in range(-3, 0):
+    print(i, end=" ") #-> -3 -2 -1
+
+for i in range(-6, 0, 2): #El tercer valor es el incremento
+    print(i, end=" ") #-> -6 -4 -2
+
+for i in range(0, 6, 2):
+    print(i, end=" ") #-> 0 2 4
+
+for i in range(10, 0, 2):
+    print(i, end=" ") #-> Nada
+
+for i in range(10, 0, -2):
+    print(i, end=" ") #-> 10 8 6 4 2
+
+
+for i in range(-10, 0, -2):
+    print(i, end=" ") #Nada
+
+for i in range(-10, 0, 2):
+    print(i, end=" ") # -> -10 -8 -6 -4 -2
+
+```
+
+Podemos usar estos ciclos for para sacar los numeros impares o pares:
+
+```python
+for i in range (1, 99+1, 2):  # Numeros impares hasta el 99
+    print("impar", i)
+
+for i in range(2,100+1,2): #Numeros pares hasta el 100
+    print("pares", i)
+```
