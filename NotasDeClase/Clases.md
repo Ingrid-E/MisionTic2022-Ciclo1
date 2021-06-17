@@ -211,16 +211,178 @@ Si queremos el resultado de 2^5 llamamos la función con 5.
 -> dosElevado(5)
 
 **Pasos de la función:**
-```
+
 dosElevado(5):
-    prod = 1
-    for i in range (1,5+1): **Repetir 5 veces**
-        prod = 1 * 2 -> 2   **-1**
-        prod = 2 * 2 -> 4   **-2**
-        prod = 4 * 2 -> 8   **-3**
-        prod = 8 * 2 -> 16  **-4**
-        prod = 16 * 2 -> 32 **-5 STOP**
-    return **prod**
-```
+*   prod = 1
+*   for i in range (1,5+1): **Repetir 5 veces**
+    *   prod = 1 * 2 = 2   *- Paso 1*
+    *   prod = 2 * 2 = 4   *- Paso 2*
+    *   prod = 4 * 2 = 8   *- Paso 3*
+    *   prod = 8 * 2 = 16  *- Paso 4*
+    *   prod = 16 * 2 = 32 *- Paso 5* **STOP**
+*   return **prod**
+
 Como prod = 35, entonces nos retorna **35**
+
+## Cadenas
+
+* \t = tabulado
+* \n = nueva linea
+* \u01F4 = carácter unicode especifico
+
+**Ejemplo**
+```python
+print("Cadena con un tabulado \t y una nueva \n linea")
+```
+```
+Cadena con un tabulado  y una nueva
+linea
+```
+
+Para concatenar palabras utilizamos el operador +
+```python
+nombre = "Ingrid"
+apellido = "E"
+
+print(nombre + ' ' + apellido)
+```
+```
+Ingrid E
+```
+**Comparar cadenas**
+* == : Comparar si son iguales
+* < : Ver que palabra es mayor o menor según el código de la letra.
+
+
+```python
+'''
+El codigo ASCCI de 'a' = 97
+                   'b' = 98
+'''
+print('a' < 'b') #True
+
+print('Rosas' == 'a') #False no son iguales
+
+'''
+R-82-o-111-s-115-a-97-s-115 = 529
+R-82-o-111-j-106-a-97-s-115 = 511
+'''
+print('Rosas' > 'Rojas') #True
+
+print("Rojas" is "Rojas") #True
+```
+
+Las cadenas de palabras str se pueden utilizar como arrays
+
+Si tenemos la variable
+<br> nombre = "Hola Mundo" <br>
+Cada letra tiene una **posición**
+*   nombre[0] = 'H'
+*   nombre[1] = 'O'
+*   nombre[2] = 'L'
+*   nombre[3] = 'A'
+
+```python
+nombre = "Ingrid E"
+for i in range(0,8):
+    print(nombre[i], end=' ')
+
+#-> I n g r i d   E
+
+for i in nombre:
+    print (i, end=' ')
+
+#-> I n g r i d   E
+```
+
+El metodo *len()* nos permite obtener el largo de las palabras str
+*   len("hola") = 4
+
+También, podemos usar las listas para sacar subcadenas de las palabras
+
+```python
+palabra = "MisionTic 2022"
+print(palabra[0]) # M
+print(palabra[:5]) # Misio
+print(palabra[0:7]) # MisionT
+print(palabra[6:10]) # Tic
+'''
+Si utilizamos el :: nos devuelve la palabra por intervalos.
+Si es negativo el intervalo va desde atrás.
+Si es positivo va normal.
+'''
+print(palabra[::-1]) # 2202 ciTnoisiM
+print(palabra[::-2]) # 20 inii
+print(palabra[:: 2]) # MsoTc22
+```
+
+**Método count**
+<br> Retorna el numero de veces que se encuentra una subcadena en una cadena.
+*   obj.count(subcadena, ini,fin)
+
+```python
+obj = "The avengers"
+print(obj.count('e')) # 3
+print(obj.count('e',4,len(obj))) #2
+
+cad = 'abcabcabcabcabc'
+print(cad.count('abc')) # 5
+
+```
+
+
+**Método find/rfind()**
+
+Nos permite encontrar partes de las palabras. find sirve para encontrar la primera, y rfind para encontrar la ultima.
+
+
+```python
+palabra = "Hola amigos buenos dias, Hola"
+print('primera:', palabra.find("Hola")) # primera: 0
+print('ultima:', palabra.rfind("Hola")) # ultima: 25
+```
+
+**Método mayúsculas y minúsculas**
+
+* .lower() = cadena en minúsculas
+* .upper() = cadena en mayúsculas
+* .capitalize() = primera letra Mayúscula
+* .title() = primera letra de cada palabra mayúscula
+* .swapcase() = intercambia Mayúsculas y minúsculas
+
+**Método strip/lstrip/strip()***
+<br> Sirve para recortar o eliminar caracteres deseados.
+*   .lstrip('-+') :  Elimina los especificado desde la izquierda.
+*   .strip('-+') :  Elimina lo especificado al principio y final del string.
+*   .rstrip('-+') :  Elimina los especificado desde la derecha.
+
+ Si no se pone nada el default es espacios.
+
+```python
+txt = "     banana     "
+x = txt.lstrip()
+
+print("of all fruits", x, "is my favorite") # of all fruits banana     is my favorite
+
+txt = ",,,,,rrttgg.....banana....rrr"
+x = txt.strip(",.grt")
+
+print(x) # banana
+
+txt = "     banana     "
+x = txt.rstrip()
+
+print("of all fruits", x, "is my favorite") # of all fruits      banana is my favorite
+
+```
+
+**Método split**
+<br> Divide la cadena en una subcadena delimitadora
+
+```python
+sdate = "01-06-2021"
+spi = sdate.split("-")
+print(sp1) # -> ['01','06', '2021']
+print('dia: ', sp1[0], 'mes:', sp1[1], 'año', sp1[2])
+```
 

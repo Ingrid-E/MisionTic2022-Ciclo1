@@ -51,7 +51,7 @@ def dosElevado(n):
     return prod
 n = 5
 
-print("2 elevado a la", n, "=", dosElevado(n))
+#print("2 elevado a la", n, "=", dosElevado(n))
 
 '''
 Pasos dosElvedo(n)
@@ -70,7 +70,41 @@ dosElevado(5):
 
 # Como prod = 35, entonces nos retorna 35
 
-
-
 '''
 
+#Cadenas
+print("Cadena con un tabulado \t y una nueva \n linea")
+nombre = "Ingrid"
+apellido = "E"
+
+print(nombre + ' ' + apellido)
+
+print('ab' < 'ba')
+print('Rosas' > 'Rojas')
+print("Rojas" is "Rojas")
+
+nombre = "Ingrid E"
+for i in nombre:
+    print (i, end=' ')
+print()
+palabra = "MisionTic 2022"
+print(palabra[0]) # M
+print(palabra[:5]) # Misio
+print(palabra[0:7]) # MisionT
+print(palabra[6:10]) # Tic
+print(palabra[:: 2]) # MsoTc22
+
+palabra = "Hola amigos buenos dias, Hola"
+print('primera:', palabra.find("Hola"))
+print('ultima:', palabra.rfind("Hola"))
+
+txt  = "-----hola----+"
+x = txt.strip('-+')
+print(x)
+
+obj = "The avengers"
+print(obj.count('e'), end="; ")
+print(obj.count('e',4,len(obj)))
+
+cad = 'abcabcabcabcabc'
+print(cad.count('abc'))
