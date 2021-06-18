@@ -453,9 +453,62 @@ else
 print(chr(d))
 ```
 
+Implementar una función potencia sin utilizar el operador **, ni la función logarítmica.
 
+Entrada: Numero (x), Potencia(n)
+Salida: Resultado Potencia (p)
 
+p = x * x * x * x ..... n veces.
 
+Casos a tener en cuenta:
+si n == 0 entonces x = 1
+si n < 0 entonces 1/(x^n)
+
+```python
+
+x = 3
+n = -2
+
+def potencia(x,n) -> float:
+    p = 1.0
+    if n > 0:
+        for i in range(1,n+1):
+            p *= x
+    elif n < 0:
+        for i in range(1,-n+1): #(1,-(-n)+1)
+            p *= x
+        p = 1.0/p
+    return p
+
+print(potencia(x,n)) #0.1111111
+
+```
+
+Generar las tablas de multiplicación del 1 al 9
+
+```python
+
+for i in range(1, 10):
+    print(i, ':', end='')
+    for j in range(1,10):
+        prod = i * j
+        print('\t', prod, end='')
+    print('', end='\n')
+```
+
+```
+Tabla de multiplicar de 1 al 9
+
+1 :      1       2       3       4       5       6       7       8       9
+2 :      2       4       6       8       10      12      14      16      18
+3 :      3       6       9       12      15      18      21      24      27
+4 :      4       8       12      16      20      24      28      32      36
+5 :      5       10      15      20      25      30      35      40      45
+6 :      6       12      18      24      30      36      42      48      54
+7 :      7       14      21      28      35      42      49      56      63
+8 :      8       16      24      32      40      48      56      64      72
+9 :      9       18      27      36      45      54      63      72      81
+```
 
 
 

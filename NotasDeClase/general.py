@@ -117,3 +117,28 @@ replace = string.replace('años', 'dias')
 print(replace)
 replace = string.replace('a','#')
 print(replace)
+
+x = 3
+n = -2
+
+def potencia(x,n) -> float:
+    p = 1.0
+    if n > 0:
+        for i in range(1,n+1):
+            p *= x
+    elif n < 0:
+        for i in range(1,-n+1): #(1,-(-n)+1)
+            p *= x
+        p = 1.0/p
+    return p
+
+print(potencia(x,n))
+
+print("Tabla de multiplicar de 1 al 9")
+
+for i in range(1, 10):
+    print(i, ':', end='')
+    for j in range(1,10):
+        prod = i * j
+        print('\t', prod, end='')
+    print('', end='\n')

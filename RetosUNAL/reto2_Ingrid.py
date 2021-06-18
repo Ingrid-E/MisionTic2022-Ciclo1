@@ -51,12 +51,12 @@ def isString(string:str) -> None:
         isString(string)
 
 #Llamada por consola de las variables
-playerOne = input("Player 1: ").upper()
-isString(playerOne)
-playerTwo = input("Player 2: ").upper()
-isString(playerTwo)
-machine = input("Machine: ").upper()
-isString(machine)
+#playerOne = input("Player 1: ").upper()
+#isString(playerOne)
+#playerTwo = input("Player 2: ").upper()
+#isString(playerTwo)
+#machine = input("Machine: ").upper()
+#isString(machine)
 
 #Donde se guardara el puntaje y resultado final.
 puntaje = [0, 0]
@@ -82,6 +82,83 @@ def wordGame() -> None :
         else:
             resultado += "S"
 
-wordGame()
+#wordGame()
 
-print(resultado)
+#print(resultado)
+
+'''
+Ingrid Echeverri Montoya
+    *Github: @IngridE
+    *Twitter: @Ingrid_E_
+
+Reto 2: Grupo P21
+Resumen:
+    Se va a elegir el consejo de administración, a partir de dos planchas, cada uno con
+    n candidatos que se identifica con una letra única. Con cada voto el programa incrementa
+    un contador.
+
+    Entrada:
+        - Serie de letras integrantes plancha 1
+        - Serie de letras integrantes plancha 2
+        - Serie de letras de los votos.
+
+    Con cada letra de voto, se imprime quien va ganando.
+        P = Plancha 1
+        N = Plancha 2
+        I = Empate
+
+    Salida:
+        -Letra de quien va ganando por cada voto.
+'''
+
+def isString(string:str) -> None:
+    '''
+    Revisa si la cadena contiene solo letras del alfabeto y no contiene
+    numeros, símbolos, etc.. Se llama recursivamente hasta que el input solo
+    contenga letras.
+
+    @param string: Cadena que se revisa
+    '''
+    containsNumbers = False
+    for i in string:
+        if not str(i).isalpha():
+            containsNumbers = True
+    if containsNumbers == True:
+        print("Input incorrecto, porfavor ingresa solo letras!")
+        string = input("->")
+        isString(string)
+
+plancha1 = input("Plancha uno: ").upper()
+isString(plancha1)
+plancha2 = input("Plancha dos: ").upper()
+isString(plancha2)
+votos = input("Votos: ").upper()
+isString(votos)
+
+puntaje = [0,0]
+
+def resultadoVotacion() -> str :
+    '''
+        Revisar cada uno de los votos, y ver quien va ganando.
+        @returns string: Resultado de quien iba ganando por cada voto.
+    '''
+    resultado = ""
+    for i in votos:
+        if plancha1.find(i) != -1 :
+            puntaje[0] += 1
+        if plancha2.find(i) != -1 :
+            puntaje[1] += 1
+
+        if puntaje[0] == puntaje[1]:
+            resultado += "I"
+        elif puntaje[0] > puntaje[1]:
+            resultado += "P"
+        else:
+            resultado += "N"
+    return resultado
+
+print(resultadoVotacion())
+
+
+
+
