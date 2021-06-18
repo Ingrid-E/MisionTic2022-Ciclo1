@@ -108,3 +108,12 @@ print(obj.count('e',4,len(obj)))
 
 cad = 'abcabcabcabcabc'
 print(cad.count('abc'))
+
+string = "Cien años de soledad"
+print(string) # Cien años de soledad
+replace = string.replace('Cien', 'Setenta')
+print(replace)
+replace = string.replace('años', 'dias')
+print(replace)
+replace = string.replace('a','#')
+print(replace)
