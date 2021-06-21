@@ -1,13 +1,21 @@
 {
     "cSpell.language": ",es",
     "cSpell.words": [
+        "AXDDMNMCSSDFMPBLNBPHRANB",
         "Dias",
+        "Echeverri",
         "Equilatero",
+        "Ingrid",
+        "KLMNP",
+        "Tuplas",
         "categoria",
         "composicion",
         "ecogenicidad",
         "floculante",
         "numeros",
+        "palindroma",
+        "palindromo",
+        "pepito",
         "while"
     ],
     "python.formatting.provider": "yapf"

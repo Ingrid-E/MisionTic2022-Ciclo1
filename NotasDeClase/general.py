@@ -142,3 +142,37 @@ for i in range(1, 10):
         prod = i * j
         print('\t', prod, end='')
     print('', end='\n')
+
+print("TUPLAS")
+print()
+
+tupla = (10,9,8,7,6,5)
+print(tupla[::-1])
+print(tupla.index(10), tupla.index(8), tupla.index(5)) 
+
+
+repetidos = (1,1,1,1,3,2,3,2)
+print(repetidos.count(1))
+print(repetidos.count(2))
+print(repetidos.count(3))
+print(repetidos.count(4))
+
+print(max(tupla), min(tupla)) # 10 5
+
+nombre = "Ingrid"
+tupla_Nombre = tuple(nombre)
+print(tupla_Nombre)
+
+tipos_tuplas= ("holaa" ,122, 0.456)
+
+cadena1 = "Numero: " #<class 'str'>
+numero = 1234 #<class 'int'>
+cadena = cadena1 + str(numero) # Los dos tiene que ser tipo str para concatenar
+
+print(cadena) # Numero: 1234
+print(type(cadena)) #<class 'str'>
+
+
+
+
+

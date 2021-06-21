@@ -510,6 +510,129 @@ Tabla de multiplicar de 1 al 9
 9 :      9       18      27      36      45      54      63      72      81
 ```
 
+## Tuplas
+
+Declaraciónes de tuplas.
+
+*   tuple_1 = 1,2,3
+*   tuple_2 = (0,1,2,3)
+*   tuple_3 = (tuple_1,tuple_2)
+
+Podemos tener 2 tuplas en 1 sola tupla, pero si queremos que las dos se combinen
+en una sola tupla entonces usamos el operador +.
+<br>
+El operador *n utilizado con tuplas, no permite repetir la tulpa n cantidad de veces.
+
+``` python
+tuple_1 = 1,2,3
+tuple_2 = ('A','B','C')
+tuple_3 = (tuple_1,tuple_2)
+
+print(tuple_1) # (1, 2, 3)
+print(tuple_2) # ('A', 'B', 'C')
+print(tuple_3) # ((1, 2, 3), ('A', 'B', 'C'))
+print(tuple_1+tuple_2) # (1, 2, 3, 'A', 'B', 'C')
+print(tuple_2 * 2) # ('A', 'B', 'C', 'A', 'B', 'C')
+```
+
+Para comparar tuplas, utilizamos los operadores de comparación.
+
+``` python
+tuple_1 = 'Rojas',123
+tuple_2 = 'Rosas',123
+tuple_3 = 'Rosas', 23
+tuple_4 = 'Rojas', 23
+
+print(tuple_1 < tuple_2) # True
+print(tuple_1 == tuple_2) # False
+print(tuple_3 > tuple_4) # True
+print(tuple_3 < tuple_4) # False
+```
+
+El operador **is** sirve para determinar si dos tuplas referencia al mismo objeto.
+
+``` python
+tuple_1 = 'Rojas',123
+tuple_2 = "Rojas",123
+tuple_3 = 'Rojas',
+tuple_4 = 123,
+tuple_5 = tuple_3 + tuple_4
+
+print(tuple_1 == tuple_2) #True
+print(tuple_1 is tuple_2) #True
+print(tuple_1 == tuple_5) #True
+print(id(tuple_1)) #1801309591232
+print(id(tuple_2)) #1801309591232
+```
+
+Para aceder a elementos en una tupla utilizamos [indice]
+<br> Cuando es un signo negativo se considera un recorrido desde la inversa
+
+```python
+colores = ("Rojo", "Azul", "Verde", "Morado")
+
+print(colores[2]) #Verde
+print(colores[-2]) #Verde
+```
+
+Ciclos for con tuplas
+``` python
+colores = ("Rojo", "Azul", "Verde", "Morado")
+
+for color in colores:
+    print(color,end=', ') # Rojo, Azul, Verde, Morado,
+```
+**Asignarle valores a la tuplas**
+
+Podemos asignarle variables a la tuplas.
+
+``` python
+colores = ("Rojo", "Azul", "Verde", "Morado")
+
+r,a,v,m = colores
+
+print(r) #Rojo
+print(v) #Verde
+print(a) #Azul
+print(m) #Morado
+
+tupla = (10,9,8,7,6,5)
+a,b,c,d = [tupla[i] for i in (1,2,3,4)]
+print(a,b,c,d) # 9 8 7 6
+a,b,c,d = [tupla[i] for i in (1,1,2,2)]
+print(a,b,c,d) # 9 9 8 8
+a,b,c = [tupla[i] for i in range(0,6,2)]
+print(a,b,c) # 10 8 6
+```
+Mas metodos para tuplas
+
+``` python
+tupla = (10,9,8,7,6,5)
+print(tupla[::-1]) # (5, 6, 7, 8, 9, 10)
+
+print(tupla.index(10), tupla.index(8), tupla.index(5)) # 0 2 5
+
+print(max(tupla), min(tupla)) # 10 5
+
+repetidos = (1,1,1,1,3,2,3,2)
+
+print(repetidos.count(1)) # 4
+print(repetidos.count(2)) # 2
+print(repetidos.count(3)) # 2
+print(repetidos.count(4)) # 0
+```
+
+Podemos volver una palabra en una tupla facilmente usando el metodo tuple()
+
+``` python
+nombre = "Ingrid"
+tupla_Nombre = tuple(nombre)
+print(tupla_Nombre) #('I', 'n', 'g', 'r', 'i', 'd')
+
+
+```
+
+
 
 
 

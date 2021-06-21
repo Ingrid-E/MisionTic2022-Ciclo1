@@ -137,6 +137,14 @@ isString(votos)
 
 puntaje = [0,0]
 
+PlanchaUno = "ADFBC"
+PlanchaDos = "KLMNP"
+Inicial = "AXDDMNMCSSDFMPBLNBPHRANB"
+
+
+
+
+
 def resultadoVotacion() -> str :
     '''
         Revisar cada uno de los votos, y ver quien va ganando.
@@ -160,5 +168,30 @@ def resultadoVotacion() -> str :
 print(resultadoVotacion())
 
 
+
+
+
+
+
+
+
+votosUno = 1
+votosDos = 1
+salida=""
+
+for i in Inicial: #Primer for
+    for j in range(len(PlanchaUno)): #Segundo for
+        if i == PlanchaUno[j]:
+            votosUno += 1
+        if i == PlanchaDos[j]:
+            votosDos += 1
+    if votosUno == votosDos:
+        salida += "I"
+    elif votosUno > votosDos:
+        salida += "P"
+    else:
+        salida += "N"
+
+print(salida)
 
 
