@@ -165,14 +165,39 @@ print(tupla_Nombre)
 
 tipos_tuplas= ("holaa" ,122, 0.456)
 
-cadena1 = "Numero: " #<class 'str'>
+cadena1 = "23" #<class 'str'>
 numero = 1234 #<class 'int'>
-cadena = cadena1 + str(numero) # Los dos tiene que ser tipo str para concatenar
+cadena = int(cadena1) + numero # Los dos tiene que ser tipo str para concatenar
 
 print(cadena) # Numero: 1234
 print(type(cadena)) #<class 'str'>
 
+print("Listas")
+print()
 
+numList = [0,1,2,3]
+letterList = ['A','B','C']
+
+print(numList*3) # [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]
+print(letterList * 2) # ['A', 'B', 'C', 'A', 'B', 'C']
+
+print(["Rojas", 123] < ["Rosas", 123]) # True
+print(["Rosas", 123] == ["rosas", 123]) # False
+print(["Rosas", 123] > ["Rosas", 23]) # True
+print(["Rosas", "123"] > ["Rosas", "23"]) # False
+#print(("Rosas", "123") > ("Rosas", 23)) #Error str > int no funciona
+
+
+text = ["cien", "años", "de", "soledad"]
+if "años" in text:
+    print("Si esta en la lista")
+else:
+    print("No esta en la lista")
+
+if "hola" not in text:
+    print("No esta en la lista")
+else:
+    print("Si esta en la lista")
 
 
 

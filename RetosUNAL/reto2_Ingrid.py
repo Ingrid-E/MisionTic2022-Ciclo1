@@ -128,21 +128,14 @@ def isString(string:str) -> None:
         string = input("->")
         isString(string)
 
-plancha1 = input("Plancha uno: ").upper()
+plancha1 = "ADFBC"
 isString(plancha1)
-plancha2 = input("Plancha dos: ").upper()
+plancha2 = "KLMNP"
 isString(plancha2)
-votos = input("Votos: ").upper()
+votos = "AXDDMNMCSSDFMPBLNBPHRANB"
 isString(votos)
 
 puntaje = [0,0]
-
-PlanchaUno = "ADFBC"
-PlanchaDos = "KLMNP"
-Inicial = "AXDDMNMCSSDFMPBLNBPHRANB"
-
-
-
 
 
 def resultadoVotacion() -> str :
@@ -152,9 +145,9 @@ def resultadoVotacion() -> str :
     '''
     resultado = ""
     for i in votos:
-        if plancha1.find(i) != -1 :
+        if  i in plancha1:
             puntaje[0] += 1
-        if plancha2.find(i) != -1 :
+        if  i in plancha2:
             puntaje[1] += 1
 
         if puntaje[0] == puntaje[1]:
@@ -166,32 +159,5 @@ def resultadoVotacion() -> str :
     return resultado
 
 print(resultadoVotacion())
-
-
-
-
-
-
-
-
-
-votosUno = 1
-votosDos = 1
-salida=""
-
-for i in Inicial: #Primer for
-    for j in range(len(PlanchaUno)): #Segundo for
-        if i == PlanchaUno[j]:
-            votosUno += 1
-        if i == PlanchaDos[j]:
-            votosDos += 1
-    if votosUno == votosDos:
-        salida += "I"
-    elif votosUno > votosDos:
-        salida += "P"
-    else:
-        salida += "N"
-
-print(salida)
 
 

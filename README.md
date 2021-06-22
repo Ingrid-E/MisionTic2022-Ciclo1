@@ -628,13 +628,142 @@ Podemos volver una palabra en una tupla facilmente usando el metodo tuple()
 nombre = "Ingrid"
 tupla_Nombre = tuple(nombre)
 print(tupla_Nombre) #('I', 'n', 'g', 'r', 'i', 'd')
+```
+## Listas
+22/06/2021
+<br>
+Donde podemos almacenar datos como: int, float, str, tuple, dicc, etc.. <br>
+En una lista separamos los datos con una '**,**' <br>
+La **diferencia** que tiene con la tuplas es que, las listas son mutables es decir que se pueden modificar.<br>
 
+[ ] Una lista vaciá, las listas pueden contener diferentes tipos de datos. <br>
 
+Se pueden crear listas que tengan listas como elementos:
+
+```python
+numList = [0,1,2,3]
+letterList = ['A','B','C']
+combinationList = [numList, letterList]
+print(combinationList) #[[0, 1, 2, 3], ['A', 'B', 'C']]
+print(combinationList[0]) #[0, 1, 2, 3]
+print(combinationList[1]) #['A', 'B', 'C']
+print(combinationList[0][1]) #1
+print(numList + letterList) # [0, 1, 2, 3, 'A', 'B', 'C']
 ```
 
+Existe el método extend para agregar una lista al final de otra lista.
+```python
+numList = [0,1,2,3]
+letterList = ['A','B','C']
+
+numList.extend(letterList) # [0, 1, 2, 3, 'A', 'B', 'C'] sirve similar que +
+print(numList)
+```
+
+Similar a la tuplas podemos crear una lista con múltiples copias de una lista.
+
+```python
+numList = [0,1,2,3]
+letterList = ['A','B','C']
+
+print(numList*3) # [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]
+print(letterList * 2) # ['A', 'B', 'C', 'A', 'B', 'C']
+```
+
+Los operadores de comparación se utilizan usando el orden lexicógrafo cuando es posible.
+Se puede realizar mientras uno a uno de los elementos de la lista sean del mismo tipo.
+
+```python
+print(["Rojas", 123] < ["Rosas", 123]) # True
+print(["Rosas", 123] == ["rosas", 123]) # False
+print(["Rosas", 123] > ["Rosas", 23]) # True
+print(["Rosas", "123"] > ["Rosas", "23"]) # False
+print(("Rosas", "123") > ("Rosas", 23)) #Error str > int no funciona
+```
+
+**Subíndice [ ]**
+
+Se puede aceder a los elementos dentro de la lista empezando desde [0]. Si es [-1] entonces se considera como la posición desde el final.
 
 
+```python
+avengers = ["Ironman", "Thor", "Ant-man", "Hulk"] 
+print(avengers[0]) # IronMan
+print(avengers[3]) # Hulk
+print(avengers[-1]) # Hulk
+print(avengers[-3]) # Thor
+```
 
+**IN**<br>
+Utilizamos el operador in para determinar si un elemento se encuentra en una lista.
 
+Si queremos saber si no se encuentra en la lista utilizamos  not in
+
+```python
+text = ["cien", "años", "de", "soledad"]
+if "años" in text:
+    print("Si esta en la lista")
+else:
+    print("No esta en la lista")
+
+if "hola" not in text:
+    print("No esta en la lista")
+else:
+    print("Si esta en la lista")
+
+#Si esta en la lista
+#No esta en la lista
+```
+
+**For**
+
+Podemos iterar una lista utilizando el método for
+```python
+s = ["hola", "amigos", "mios"]
+for palabra in s: # para cada palabra de la lista
+    print(palabra, end = ", ")
+
+# hola, amigos, mios
+```
+
+Se puede crear una lista utilizando un for adentro.
+``` python
+d = 10
+desplaza = [d + x for x in range(5)]
+print(desplaza) # [10,11,12,13,14]
+potencias = [3 ** x for x in range(2, 6)]
+print(potencias) # [9,27,81,243]
+```
+
+Igualmente como las tuplas se le puede agregar variables
+``` python
+lista = [1, -2, 3]
+a, b, c = lista
+# a = 1
+# b = -2
+# c = 3
+
+lista = [11, 9, -2, 3, 8, 5]
+var1, var2, var3 = [lista[i] for i in (1, 3, 5)]
+print("var1 =", var1, ", var2 =", var2, ", var3 =", var3)
+#var1 = 9 , var2 = 3 , var3 = 5
+var1, var2, var3 = [lista[i] for i in range(0, 6, 2)]
+print("var1 =", var1, ", var2 =", var2, ", var3 =", var3)
+# var1 = 11 , var2 = -2 , var3 = 8
+```
+
+Las listas tambien contienen estos metodos:
+*   Len(lista) = Longitud de la lista
+*  .append(valor) _= Agrega un elemento al final de la lista
+* .insert(posicion, valor) = Agrega un elemento en una posicion especifica
+*   .remove(valor) = elimina donde encuentre primero el valor de izquierda a derecha
+*   .count(valor) = Retorna las n veces que se repite un numero
+*   .index(valor) = Retorna la posicion del valor si se repite coje el primero.
+* max(lista) = Retorna el Maximo valor
+* min(lista) = Retorna el Min Valor
+* .sort() = De menor a mayor
+* .sort(reverse =  True) = De mayor a menor
+* list(valor) = Para volver un elemento a una lista
+* .pop(posicion/default ultima posicion) = Elimina un elemento en la posicion
 
 
