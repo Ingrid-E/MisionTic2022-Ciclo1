@@ -2,6 +2,7 @@
     "cSpell.language": ",es",
     "cSpell.words": [
         "AXDDMNMCSSDFMPBLNBPHRANB",
+        "Back",
         "Dias",
         "Echeverri",
         "Equilatero",
@@ -18,7 +19,8 @@
         "palindroma",
         "palindromo",
         "pepito",
-        "while"
+        "while",
+        "zeros"
     ],
     "python.formatting.provider": "yapf"
 }

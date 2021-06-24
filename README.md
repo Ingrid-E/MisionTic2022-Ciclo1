@@ -766,4 +766,6 @@ Las listas tambien contienen estos metodos:
 * list(valor) = Para volver un elemento a una lista
 * .pop(posicion/default ultima posicion) = Elimina un elemento en la posicion
 
-
+## Ejercicios
+24/06/2021
+'''

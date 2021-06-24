@@ -200,4 +200,60 @@ else:
     print("Si esta en la lista")
 
 
+print("Ejercicios")
+print()
+
+# Leer una lista y convertir sus dígitos numéricos a  enteros.
+
+def leerLista(texto):
+    return input(texto).split(' ')
+
+#ll = leerLista('su lista: ') print(ll)
+
+'''
+Calcular el producto punto de dos puntos
+Producto v con w (v.w)
+
+Formula de Producto Punto
+v = (a1,b1,c1)
+u = (a2,b2,c2)
+
+producto_punto = (a1*a2)+(b1*b2)+(c1*c2)
+'''
+
+'''
+Punto directo vectores multiplicados
+v = (a1,b1,c1)
+u = (a2,b2,c2)
+[a1*a2,b1*b2,c1*c2]
+'''
+
+
+'''
+Hallar la mediana de un arreglo
+'''
+
+def mediana(A):
+    A.sort()
+    middle = int(round(len(A)/2, 0))
+    print(A[middle])
+
+#mediana([6,-3,4,5,3,2])
+
+
+'''
+colocar los 0 al final del arreglo
+'''
+
+def zerosBack(list):
+    for i in list:
+        if i == 0:
+            list.remove(i)
+            list.append(i)
+    print(list)
+
+zerosBack([0,0,0,5,6,0,7,-3,8,0,-2,0])
+
+
+
 
