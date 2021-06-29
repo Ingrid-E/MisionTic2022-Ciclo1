@@ -1,7 +1,7 @@
 # Reto1
 
 #### Realizado por: @g1alexander
-
+#### Solución #2 realizada por: [@santigp258](https://github.com/santigp258)
 ---
 
 El gobierno de un país con el fin de incrementar las oportunidades laborales de la nación decidió ofrecer cursos de programación para todos. Dentro de uno de los cursos existe un profesor que quiere categorizar a sus estudiantes según su nivel académico para crear grupos de trabajo que tengan un mismo nivel. Para poder categorizarlos, les manda 2 ejercicios que deben resolver en la plataforma de programación de la clase (Replit); a partir del número total de intentos que cada estudiante tuvo a la hora de resolver los ejercicios, el profesor le dará a cada uno 3 puntuaciones le asignará su categoría.
