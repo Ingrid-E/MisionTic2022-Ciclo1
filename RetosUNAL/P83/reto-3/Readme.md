@@ -1,6 +1,7 @@
 # Reto #3
 
-#### Realizado por: [@g1alexander](https://github.com/g1alexander)
+#### Solución #1 realizada por: [@g1alexander](https://github.com/g1alexander)
+
 #### Solución #2 realizada por: [@santigp258](https://github.com/santigp258)
 
 ---
