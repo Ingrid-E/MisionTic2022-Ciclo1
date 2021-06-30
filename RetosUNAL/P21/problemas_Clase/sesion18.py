@@ -26,6 +26,16 @@ def contarCantidad(dato, tipo):
             cantidad += 1
     return cantidad
 
+def todosLosPaises(dato, tipo):
+    cantidad = []
+    contador = {pais['Country']:0 for pais in salesJan2009}
+    for fila in salesJan2009:
+        if(fila[tipo] == dato):
+            contador[fila['Country']] += 1
+    print("Cantidad de veces que los paises usaron", dato)
+    print(contador)
+
 
 print(contarCantidad('United Kingdom', 'Country'))
 print(contarCantidad('Visa', 'Payment_Type'))
+todosLosPaises('Visa', 'Payment_Type')
