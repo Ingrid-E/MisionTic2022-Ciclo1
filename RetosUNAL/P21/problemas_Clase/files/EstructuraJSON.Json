@@ -1,0 +1,24 @@
+{
+    "jadiazcoronado": {
+        "nombres": "Juan Antonio",
+        "apellidos": "D ́ıaz Coronado",
+        "edad": 19,
+        "colombiano": true,
+        "deportes": [
+            "Futbol",
+            "Ajedrez",
+            "Gimnasia"
+        ]
+    },
+    "dmlunasol": {
+        "nombres": "Dorotea Maritza",
+        "apellidos": "Luna Sol",
+        "edad": 25,
+        "colombiano": false,
+        "deportes": [
+            "Baloncesto",
+            "Ajedrez",
+            "Gimnasia"
+        ]
+    }
+}

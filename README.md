@@ -1077,6 +1077,10 @@ y con json.loads(response.text) se carga <br>
 Para obtener registos del JSON: <br>
 nombreJSON[:2] los dos primeros valores <br>
 
+**Info de [w3schools](https://www.w3schools.com/python/python_json.asp)** <br>
+
+JSON es una sintaxis para guardar e intercambiar datos. En python utilizamos la libreria **import json** para trabajar con datos de JSON.
+
 
 
 
