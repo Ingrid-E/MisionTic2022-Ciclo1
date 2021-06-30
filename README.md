@@ -992,7 +992,92 @@ Es un diccionario donde cada item esta delimitado por comillas dobles " y el val
 
 No todos los diccionarios de Python es un objeto JSON ya que en python las claves pueden ser numeros, cadenas, tuplas...etc. En JSON solo se permite cadenas de caracter delimitadas por comillas dobles. <br>
 
-muc
+|Tipo en Python| Tipo en JSON|
+|---|---|
+|dict|object|
+|tuple,list|array|
+|str|string|
+|int,float|number|
+|False|false|
+|True|true|
+|None|null|
+
+En python podemos importar el modulo de JSON con <br>
+**import JSON** <br>
+
+Los archivos de JSON se pueden serializar. En la libreria de JSON encontramos el metodo 
+dump() que permite escribir datos en un archivo.<br>
+
+Si tenemos:
+```JSON
+data = {
+    "cientifico":{
+        "nombre": "Alan Mathison Turing",
+        "edad": "41"
+    }
+}
+```
+Se puede **serializar** en un archivo asi:
+```python
+with open("json/data_file.json", "w") as write_file:
+    json.dump(data_write_file)
+```
+
+Se crea un archivo que contiene:<br>
+{"cientifico": {"nombre": "Alan Mathison Turing", "edad": "41"}} <br>
+
+Tambien se puede asignar a un string y nos devuelve lo mismo que contiene el archivo. <br>
+*   json.dump(data, indent=n) : Podemos especificar la cantidad de espacios con n en indent
+*   json.load(archivo) : Cargar JSONs desde archivos o desde strings si estan dentro de 3 comillas simples.
+*   pprint : Imprimir de forma bonita
+
+**Ejemplo**
+```python
+import json
+from pprint import pprint
+strjson = '''{
+    "boolean1: null,
+    "diccionario": {"papa":2000, "arroz": 5000},
+    "intValue": 0,
+    "myList": [],
+    "myList2": ["info1", "info2"],
+    "littleboolean": false,
+    "myEmptyList": null,
+    "text1": null,
+    "text2": "hello",
+    "value1":null,
+    "value2:" null}
+    '''
+data = json.load(strjson)
+pprint(data)
+```
+
+```
+{
+    "boolean1: null,
+    "diccionario": {"papa":2000, "arroz": 5000},
+    "intValue": 0,
+    "myList": [],
+    "myList2": ["info1", "info2"],
+    "littleboolean": false,
+    "myEmptyList": null,
+    "text1": null,
+    "text2": "hello",
+    "value1":null,
+    "value2:" null}
+```
+
+Para revisar un dato en especifico solo ponemos data["test2"] -> hello <br>
+JSONPlaceholder para practicar peticiones. <br>
+
+import requests para leer archivos JSON desde la web <br>
+response = request.get(url) <br>
+y con json.loads(response.text) se carga <br>
+
+Para obtener registos del JSON: <br>
+nombreJSON[:2] los dos primeros valores <br>
+
+
 
 
 
