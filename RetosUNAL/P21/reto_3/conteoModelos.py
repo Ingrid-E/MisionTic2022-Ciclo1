@@ -6,7 +6,7 @@ Twitter: @Ingrid_E_
 Reto 3 P21 UNAL
 '''
 
-#modelos_vendidos = input('Modelos Vendidos:').split(' ')
+modelos_vendidos = input('Modelos Vendidos:').split(' ')
 '''
 Función que cuenta cada cuanto se repite un numero en secuencia
 '''
@@ -25,4 +25,5 @@ def conteoModelos(modelos):
     print(" ".join(x for x in secuenciaModelos[0]))
     print(" ".join(str(x) for x in secuenciaModelos[1]))
 
-#conteoModelos(modelos_vendidos)
+conteoModelos(modelos_vendidos)
+
