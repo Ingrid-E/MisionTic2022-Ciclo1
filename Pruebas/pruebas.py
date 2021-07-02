@@ -1,12 +1,9 @@
-import json
+x = 0
 
-# some JSON:
-x =  '{ "name":"John", "age":30, "city":"New York"}'
-#String in JSON mode
+def cambio():
+    global x
+    x = 1
 
-# parse x:
-y = json.loads(x)
+cambio()
+print(x) # -> retorna 1
 
-# the result is a Python dictionary:
-y["age"] = 50
-print(y["age"])
