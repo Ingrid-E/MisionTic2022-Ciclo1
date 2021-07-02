@@ -1,0 +1,11 @@
+{
+    "nombre":"Sarah Lee",
+    "profesion":"Programador",
+    "edad":20,
+    "lenguajes":["Java","C++","Javascript"],
+    "disponibilidadParaViajar":true,
+    "rangoProfesional": {
+        "aniosDeExperiencia": 12,
+        "nivel": "Semi-Senior"
+    }
+}

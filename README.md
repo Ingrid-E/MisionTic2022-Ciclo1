@@ -766,6 +766,325 @@ Las listas tambien contienen estos metodos:
 * list(valor) = Para volver un elemento a una lista
 * .pop(posicion/default ultima posicion) = Elimina un elemento en la posicion
 
-## Ejercicios
-24/06/2021
-'''
+## Archivos
+29/06/2021 <br>
+Existen 4 operaciónes que se pueden realizar con archivos desde un programa: <br>
+*   Crear
+*   Abrir
+*   Cerrar
+*   Eliminar
+Modos de abrir archivos en **Python** son:
+*   w : Escribir en el archivo, creandolo si no existe y si si sobreescribiendolo.
+    *   w+ : Borra cualquier dato que existe en el archivo y lo deja como nuevo
+*   r+ : Leer el archivo y escribir en el archivo desde el principio
+*   a+ : Leer el archivo y escribir al final del archivo (append)
+*   -x : Crear archivos
+*   b  : Leer archivos binarios, se agrega al final de los otros modificadores:
+    *   wb,ab,r+b,a+b
+
+Para abrir archivos utilizamos el metodo <br>
+open(ruta del archivo, 'r')
+
+```python
+def leerArch(path):
+    modo = 'r'
+    with open(path, modo) as f:
+        data = f.read()
+        data = f.read(6) #Especificamos que queremos leer en la
+                         # segunda linea 6 bytes
+    return data
+path = 'files/data.txt' #Relativo al ejemplo mostrado
+data = leerArch(path)
+print(data)
+
+with open(path, 'w') as f:
+    data = "Escribiendo en el archivo 123"
+    f.write(data) #Esto se escribe en el archivo 3 veces
+    f.write(data)
+    f.write(data)
+```
+
+Podemos especificar el tipo de codificación para la lectura del archivo.<br>
+with open(ruta del archivo, modo, encoding="utf-8") as f: <br>
+
+El metodo **readline()** sirve para leer el contenido de cada linea por individual. Las lunes se pueden cargar como un archivo si se utiliza el comando readlines().
+
+```python
+with open("files/data1.txt", 'r', enconding="utf-8") as f:
+    print("Nombre del archivo: ", f.name)
+    lista = f.readlines()
+print(lista) # Nos devuelve una lista con las lineas.
+```
+
+La forma mas eficiente de abrir y procesar un archivo es leerlo linea por linea:
+
+```python
+with open("files/data1.txt", 'r', enconding="utf-8") as f:
+    for line in f:
+        print(line, end="")
+```
+
+Si queremos escribir datos en un archivo que no son cadenas de texto, podemos hacer.
+
+```python
+values = [1,2,3,4, False]
+
+with open(path, 'w+') as f:
+    for value in values:
+        str_value = str(value)
+        f.write(str_value)
+        f.write('\n')
+```
+
+El metodo seek nos permite ubicar el puntero en la posición que deseemos dentro del archivo<br>
+
+Si tenemos un archivo con:<br>
+
+Las quince letras <br>
+12345 <br>
+5678 <br>
+
+
+```python
+with open(path, 'r', enconding='utf-8') as f:
+    f.seek(11,0) # <- Empezamos a leer la info desde aqui
+    for line in f:
+        print(line)
+```
+
+Este metodo nos retorna: <br>
+
+letras <br>
+12345 <br>
+5678 <br>
+
+El metodo **tell** nos permite obtener la longitud de un archivo o la posición donde se encuentra.
+
+```python
+with open(path, 'a+') as f:
+    print(f.tell()) # Retorna 29 con el archivo anterior
+
+```
+
+Para **editar** un archivo dado es utilizando list.insert(i, x), que permite insertar nuevos datos a la lista. Una vez creada se puede unir con **join** y escribirlo sobre el archivo. <br>
+
+Si tenemos el archivo: <br>
+Esta es la linea 1: abcabcabcabc <br>
+Esta es la linea 2: abcabcabcabc <br>
+Esta es la linea 3: abcabcabcabc <br>
+
+Primero abrimos el archivo en modo lectura y luego leemos sus lineas, lo guardamos, lo modificamos y lo abrimos de nuevo para guardar la nueva linea.
+
+```python
+# Abre el archivo en modo de s ́olo lectura
+with open("files/data5.txt", "r", encoding="utf-8") as f:
+    list_content = f.readlines()
+list_content.insert(1, "Esta es la l ́ınea 1.5: jajaja\n")
+
+# Re-abre el archivo en modo de s ́olo escritura
+# para sobreescribir la versi ́on anterior de  ́este
+with open("files/data5.txt", "w", encoding="utf-8") as f:
+    contenido = "".join(list_content)
+    f.write(contenido)
+```
+
+La archivo queda como: <br>
+Esta es la linea 1: abcabcabcabc <br>
+Esta es la linea 1.5: jajajaja <br>
+Esta es la linea 2: abcabcabcabc <br>
+Esta es la linea 3: abcabcabcabc <br>
+
+Existen muchas mas funciones que nos ayudan con la lectura de archivos en python: <br>
+
+Si utilizamos **import os** podemos aplicar funciones de esa libreria <br>
+
+*   os.scandir()
+*   pathlib.Path()
+
+```python
+import os
+entries = os.scandir("files/")
+for entry in entries:
+    print(entry.name + ", es directorio: " + str(entry.is_dir()) + "size" + str(entry.stat().st_size) + " bytes.")
+
+#salidas:
+data.txt, es directorio: False, size: 17 bytes.
+data1.txt, es directorio: False, size: 95 bytes.
+data2.txt, es directorio: False, size: 131 bytes.
+data3.txt, es directorio: False, size: 32 bytes.
+data4.txt, es directorio: False, size: 31 bytes.
+data5.txt, es directorio: False, size: 128 bytes.
+sample_data, es directorio: True, size: 4096 bytes.
+```
+
+Guardar estructuras de **datos** <br>
+
+Cuando queremos guardar objetos en python como diccionarios ó listas, utilizamos el módulo pickle y su metodo dump nos permite serializar objetos.
+<br>
+El siguiente código permite crear dos listas y un diccionario.
+<br>
+
+```python
+import pickle
+
+name = ['mohit', 'bhaskar', 'manish']
+skill = ['Python', 'C++', 'Java']
+dict1 = dic([(k,v) for k,v in zip(name, skill)])
+
+with open("files/programming_powers.pkl", "wb") as p_file:
+    pickle.dump(name, p_file)
+    pickle.dump(skill, p_file)
+    pickle.dump(dict1, p_file)
+```
+
+Con esto se crea un archivo que se lee en binario y no es leible para nosotros.<br>
+
+Para cargar estas estructuras lo hacemos de forma simple
+
+```python
+import pickle
+
+with open("files/programming_powers.pkl", "rb") as p_file:
+    list1 = pickle.load(p_file)
+    list2 = pickle.load(p_file)
+    dict1 = pickle.load(p_file)
+
+print(list1) #['mohit', 'bhaskar', 'manish']
+print(list2) #['Python', 'C++', 'Java']
+print(dict1) # {'mohit': 'Python', 'bhaskar': 'Pyhon', 'manish':'Java'}
+```
+
+Una imagen de tipo .jgp es un archivo de tipo binario: Con cierto procesamiento es posible crear una copia de la imagen de la siguiente manera:
+
+
+```python
+with open("files/discurso.jpg", "rb") as imagen:
+    data = imagen.read()
+with open("files/copy.jpg", "wb") as f:
+    f.write(data)
+```
+
+**Problemas Sesion 18**
+||LINK EJERCICIO||
+
+## JSON
+30 de junio 2021 <br>
+
+Javascript Object Notation, intercambio de información entre aplicaciones. Se puede utilizar en diferentes lenguajes de programación. <br>
+
+Es un diccionario donde cada item esta delimitado por comillas dobles " y el valor puede ser cualquier tipo de dato. <br>
+
+**Ejemplo:**
+```JSON
+{
+    "Nombre": "Ingrid",
+    "Apellido": "E",
+    "PasaTiempos": ["Pintar", "Programmar", "Cantar"],
+    "Edad": 19,
+    "Empleado": false,
+    "Jefe": null,
+    "Hijos": [
+        {"Nombre": "Alice", "Edad":16},
+        {"Nombre": "Bob", "Edad":8}
+    ]
+}
+```
+
+No todos los diccionarios de Python es un objeto JSON ya que en python las claves pueden ser numeros, cadenas, tuplas...etc. En JSON solo se permite cadenas de caracter delimitadas por comillas dobles. <br>
+
+|Tipo en Python| Tipo en JSON|
+|---|---|
+|dict|object|
+|tuple,list|array|
+|str|string|
+|int,float|number|
+|False|false|
+|True|true|
+|None|null|
+
+En python podemos importar el modulo de JSON con <br>
+**import JSON** <br>
+
+Los archivos de JSON se pueden serializar. En la libreria de JSON encontramos el metodo 
+dump() que permite escribir datos en un archivo.<br>
+
+Si tenemos:
+```JSON
+data = {
+    "cientifico":{
+        "nombre": "Alan Mathison Turing",
+        "edad": "41"
+    }
+}
+```
+Se puede **serializar** en un archivo asi:
+```python
+with open("json/data_file.json", "w") as write_file:
+    json.dump(data_write_file)
+```
+
+Se crea un archivo que contiene:<br>
+{"cientifico": {"nombre": "Alan Mathison Turing", "edad": "41"}} <br>
+
+Tambien se puede asignar a un string y nos devuelve lo mismo que contiene el archivo. <br>
+*   json.dump(data, indent=n) : Podemos especificar la cantidad de espacios con n en indent
+*   json.load(archivo) : Cargar JSONs desde archivos o desde strings si estan dentro de 3 comillas simples.
+*   pprint : Imprimir de forma bonita
+
+**Ejemplo**
+```python
+import json
+from pprint import pprint
+strjson = '''{
+    "boolean1: null,
+    "diccionario": {"papa":2000, "arroz": 5000},
+    "intValue": 0,
+    "myList": [],
+    "myList2": ["info1", "info2"],
+    "littleboolean": false,
+    "myEmptyList": null,
+    "text1": null,
+    "text2": "hello",
+    "value1":null,
+    "value2:" null}
+    '''
+data = json.load(strjson)
+pprint(data)
+```
+
+```
+{
+    "boolean1: null,
+    "diccionario": {"papa":2000, "arroz": 5000},
+    "intValue": 0,
+    "myList": [],
+    "myList2": ["info1", "info2"],
+    "littleboolean": false,
+    "myEmptyList": null,
+    "text1": null,
+    "text2": "hello",
+    "value1":null,
+    "value2:" null}
+```
+
+Para revisar un dato en especifico solo ponemos data["test2"] -> hello <br>
+JSONPlaceholder para practicar peticiones. <br>
+
+import requests para leer archivos JSON desde la web <br>
+response = request.get(url) <br>
+y con json.loads(response.text) se carga <br>
+
+Para obtener registos del JSON: <br>
+nombreJSON[:2] los dos primeros valores <br>
+
+**Info de [w3schools](https://www.w3schools.com/python/python_json.asp)** <br>
+
+JSON es una sintaxis para guardar e intercambiar datos. En python utilizamos la libreria **import json** para trabajar con datos de JSON.
+
+
+
+
+
+
+
+
