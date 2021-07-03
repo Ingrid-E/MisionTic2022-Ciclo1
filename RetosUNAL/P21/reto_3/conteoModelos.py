@@ -27,3 +27,9 @@ def conteoModelos(modelos):
 
 conteoModelos(modelos_vendidos)
 
+
+lista = ['a', 'b', 'c']
+
+for x in lista:
+    print(x)
+
