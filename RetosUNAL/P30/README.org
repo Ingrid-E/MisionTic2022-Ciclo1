@@ -18,7 +18,7 @@ enlace a tu GitHub. Por ejemplo:
 En el ciclo 1 se impartieron los fundamentos de la programación
 utilizando utilizando Python, partiendo desde los tipos de datos,
 funciones, estructuras condicionales y ciclos hasta estructuras de
-datos básicas y libarías. Los retos fueron diseñados de tal manera que
+datos básicas y liberías. Los retos fueron diseñados de tal manera que
 se pudiera realizar con los conocimientos aprendidos durante el
 transcurso del ciclo.
 
