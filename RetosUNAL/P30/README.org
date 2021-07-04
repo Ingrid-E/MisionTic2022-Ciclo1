@@ -1,0 +1,32 @@
+* P30
+Bienvenido al repositorio de retos del grupo P30, aquí encontraras un
+listado de los retos propuestos por ciclos y sus soluciones
+dadas por los estudiantes. Siéntete libre de navegar entre
+archivos.
+
+Las soluciones a los retos poseen autoría, sin embargo, son de libre
+uso. Si deseas contribuir con tu solución a cualquiera de los retos
+recuerda añadir un comentario al inicio del archivo con tu nombre y
+enlace a tu GitHub. Por ejemplo:
+
+#+BEGIN_SRC python
+  # Author: [Gabriel Morales](https://github.com/xgabrielmorales)
+#+END_SRC
+
+** Listado de Retos por Ciclo
+*** Ciclo 1 - Python
+En el ciclo 1 se impartieron los fundamentos de la programación
+utilizando utilizando Python, partiendo desde los tipos de datos,
+funciones, estructuras condicionales y ciclos hasta estructuras de
+datos básicas y libarías. Los retos fueron diseñados de tal manera que
+se pudiera realizar con los conocimientos aprendidos durante el
+transcurso del ciclo.
+
+- [[file:./reto_1/][Reto 1]]
+- [[file:./reto_2][Reto 2]]
+- [[file:./reto_3][Reto 3]]
+- [[file:./reto_4][Reto 4]]
+- Reto 5 /(Aun no disponible)/
+
+*** Ciclo 2 - Java
+El ciclo 2 aun no se encuentra documentado, estará aquí próximamente.
