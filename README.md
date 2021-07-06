@@ -1082,9 +1082,194 @@ nombreJSON[:2] los dos primeros valores <br>
 JSON es una sintaxis para guardar e intercambiar datos. En python utilizamos la libreria **import json** para trabajar con datos de JSON.
 
 
+## Librerias
 
+Podemos importar una gran cantidad de librerias en Python que nos permiten realizar funciones de todo tipo
 
+### **Numpy**
 
+**import numpy as np** <br>
+
+Se utiliza para computación científica en Python. Contiene arreglos en varias dimensiones, con herramientas para manipularlos.<br>
+
+Metodos:
+*   np.array(list) : Crea un array con "<class 'numpy.ndarry'>"
+*   np.shape : Retorna el tamaño del array
+*   np.zeros(tamaño): columna x fila o solo filas, de zeros tipo float
+*   np.dtype : Retorna el tipo de los elementos dentro del array
+*   np.sqrt(array): Aplica raiz cuadrada a cada elemento de la lista
+*   np.add(array1, array2): Suma los valores de cada lista
+*   np.linspace(start,stop, num, endpoint, retstep, stype, axis): Retorna numeros separados por espacios segun un intervalo especificado.
+    *   start : Inicio de la secuencia
+    *   stop: Final de la secuencia si endpoint es TRUE
+    *   num: Cantidad para generar no puede ser negativo
+    *   endpoint: Si finaliza o no
+    *   retstep: Si es true retorna los pasos entre datos
+
+Si creamos una variable con elementos de otro array a[0,1] los valores que cambien en esa variable se cambiaran tambien en el array general. <br>
+
+Dos arrays se pueden sumar utilizando el operador + o **np.add(array1, array2)** si son del mismo tamaño. Tambien se puede hacer x("array") + 3 y se le sumara 3 a todos los valores de la lista.
+
+```python
+import numpy as np
+
+lista = list(range(1,5)) #[1,2,3,4]
+a = np.array(lista) # [1 2 3 4]
+print(a.shape) # (4,)
+print(a[0], a[1], a[2]) # 1 2 3
+
+bidimensional = np.array([[1,2,3,4,5],[4,5,6,7,8]])
+#Tienen que ser del mismo tamaño o da error
+print(bidimensional)
+# [[1 2 3 4 5]
+# [4 5 6 7 8]]
+print(bidimensional[0,0], bidimensional[1,0]) # 1 4
+
+print("---------")
+#Arreglo de diferente tipo
+
+a = np.zeros((3,4)) #Devuelve una array de x tamaño lleno de 0
+#[[0. 0. 0. 0.]
+# [0. 0. 0. 0.]
+# [0. 0. 0. 0.]]
+print(a.shape) # (3,4)
+
+a = np.zeros((2,3,4)) #Devuelve una array de x tamaño lleno de 0
+#[[0. 0. 0. 0.]
+# [0. 0. 0. 0.]
+# [0. 0. 0. 0.]]]
+print(a.shape) # (2,3,4)
+
+print("---------")
+a = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]]) # Tamaño 3x4
+b = a[:2, 1:3]
+#[[2 3]
+# [6 7]]
+b[0,0] = -11
+print(b,a, sep="\n")
+#[[-11   3]
+# [  6   7]]
+#[[  1 -11   3   4]
+# [  5   6   7   8]
+# [  9  10  11  12]]
+print("---------")
+
+x = np.array([5,-4])
+print(x.dtype) # int32
+x = np.array([1.0,-2.0])
+print(x.dtype) # float64
+x = np.array([5,-4], dtype=np.float64)
+print(x.dtype) # float64
+
+print("---------")
+x = np.array([[1,2,5],[3,4,6]], dtype=np.float64)
+y = np.array([[5,6,-1],[7,8,-6]], dtype=np.float64)
+print(np.add(x,y))
+#Suma:
+# [[ 6.  8.  4.]
+# [10. 12.  0.]]
+print(np.sqrt(x))
+#[[1.         1.41421356 2.23606798]
+# [1.73205081 2.         2.44948974]]
+print("---------")
+
+print(np.linspace(2,3,num=10, endpoint=True, retstep=False))
+#[2.         2.11111111 2.22222222 2.33333333 2.44444444 2.55555556
+# 2.66666667 2.77777778 2.88888889 3.        ]
+print(np.linspace(2,3,num=10, endpoint=True, retstep=True))
+#(array([2.        , 2.11111111, 2.22222222, 2.33333333, 2.44444444,
+#       2.55555556, 2.66666667, 2.77777778, 2.88888889, 3.        ]), 0.1111111111111111)
+```
+
+### **Matplotlib**
+**import matplotlib.pyplot as plt**<br>
+
+Utilizada para crear visualizaciones estáticas o animadas en Python. Se puede graficar un área con uno o más ejes x,y o x,y,z. La forma mas facil de crear una figura con ejes es utilizar **pyploy** <br>
+
+```python
+plt.plot([1,2,3,4],[1,4,2,3]) # x,y
+#plt.show() #Muestra la gráfica
+
+x = np.linspace(0,2,50)
+fig, ax = plt.subplots() #Crear la figura y ejes
+ax.plot(x, x, label="linear") #Dibujando datos
+ax.plot(x, x**2, label="quadratic")
+ax.plot(x,x**3, label="cubic")
+ax.set_xlabel("X") #Poner el nombre a el eje x
+ax.set_ylabel("Y") #Poner el nombre a el eje y
+ax.set_title("Figura de prueba\nIngrid-E") #Titulo a la figura
+ax.legend() #Muesta los labels
+#plt.show() #Muestra la gráfica
+names = ["grupo_A", "grupo_B", "grupo_C"]
+values = [3.4, 50.4, 23]
+
+plt.subplot(131) #No entiendo que hace
+plt.bar(names, values) #Grafica de barras
+plt.subplot(132)
+plt.scatter(names, values) # De puntos
+plt.subplot(133)
+plt.plot(names, values) #De lineas
+plt.suptitle("Categorical Plotting")
+plt.show()
+```
+
+## **Panda**
+**import pandas as pd** <br>
+Permite manipular datos de alto nivel, se utiliza para manipulación y análisis de datos.
+
+```python
+from typing import Counter
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import datetime
+
+dictc = {"country": ["Brazil", "Russia", "India",
+"China", "South Africa", "Colombia"],
+"capital": ["Brasilia", "Moscow", "New Dehli",
+"Beijing", "Pretoria", "Bogot ́a"],
+"area": [8.516, 17.10, 3.286, 9.597, 1.221, 1.142],
+"population": [200.4, 143.5, 1252, 1357, 52.98, 49.65] }
+
+brics = pd.DataFrame(dictc)
+#        country    capital    area  population
+#0        Brazil   Brasilia   8.516      200.40
+#1        Russia     Moscow  17.100      143.50
+#2         India  New Dehli   3.286     1252.00
+#3         China    Beijing   9.597     1357.00
+#4  South Africa   Pretoria   1.221       52.98
+#5      Colombia   Bogot ́a   1.142       49.65
+
+ventasPaises = pd.read_csv("SalesJan2009.csv")
+ventasPaises.head(3)
+#    Transaction_date   Product  Price  ...      Last_Login   Latitude   Longitude
+# 0      1/2/2009 6:17  Product1   1200  ...   1/2/2009 6:08  51.500000   -1.116667
+# 1      1/2/2009 4:53  Product1   1200  ...   1/2/2009 7:49  39.195000  -94.681940
+# 2     1/2/2009 13:08  Product1   1200  ...  1/3/2009 12:32  46.188060 -123.830000
+# 3     1/3/2009 14:44  Product1   1200  ...  1/3/2009 14:22 -36.133333  144.750000
+# 4     1/4/2009 12:56  Product2   3600  ...  1/4/2009 12:45  33.520560  -86.802500
+# ..               ...       ...    ...  ...             ...        ...         ...
+# 992  1/22/2009 14:25  Product1   1200  ...   3/1/2009 3:37  54.583333   -5.933333
+# 993   1/28/2009 5:36  Product2   3600  ...   3/1/2009 4:40 -20.360278   57.366111
+# 994    1/1/2009 4:24  Product3   7500  ...   3/1/2009 7:21  42.946940  -76.429440
+# 995   1/8/2009 11:55  Product1   1200  ...   3/1/2009 7:28  52.083333    0.433333
+# 996  1/12/2009 21:30  Product1   1200  ...  3/1/2009 10:14  43.073060  -89.401110
+#[997 rows x 12 columns]
+cantidadPais = Counter(ventasPaises["Country"])
+print(cantidadPais) # diccionario con la cantidad de veces que aparece 
+                    # un pais en el archivo
+print(cantidadPais.most_common(3)) #[('United States', 462), ('United Kingdom', 100), ('Canada', 76)]
+
+ventasPaises["Transaction_date"] = pd.to_datetime(ventasPaises["Transaction_date"])
+A = (ventasPaises['Transaction_date']
+        .dt.floor("d")
+        .value_counts()
+        .rename_axis("date")
+        .reset_index(name="num ventas"))
+
+G = A.plot(x="date", y="num ventas", color="green", title="Ventas por fecha")
+plt.show()
+```
 
 
 
