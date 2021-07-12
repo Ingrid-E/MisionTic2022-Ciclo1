@@ -1,0 +1,74 @@
+* Reto #5 - P30
+** Descipción
+Ahora la pizzería "Mominos" quiere implementar pedidos a domicilio
+para sus clientes. Para ello, la pizzería requiere un sistema que
+permita hacer control de las pizzas que deben llevar los repartidores
+y la cantidad de repartidores necesarios para cumplir la demanda del
+día.
+
+** Tarea
+Se debe desarrollar una librería llamada =control_pizzeria=. Esta
+librería debe contener las siguientes funcionalidades:
+
+- _(Vale 1)_ Una función llamada *pedidos*, que resume en una lista
+  los diferentes tipos de pizza que han solicitado los clientes.
+
+  *Argumento*: Lista de tipos de pizza que los clientes pidieron, -
+  =["M", "V", "P", "P", "H", "H", "M", "M", "P", "C"]=
+
+  *Salida*: Lista que resume los diferentes tipos de pizza. - =["M",
+  "V", "P", "H", "C"]=
+
+- _(Vale 1)_ Una función *debo_llevar*, que dada una lista de códigos
+  de repartidores disponibles en el día, el listado de pizzas que la
+  pizzería debe repartir ese día, y el tipo de pizza a llevar,
+  consulte cuales repartidores están disponibles para llevar ese tipo
+  de pizza.
+
+  *Nota*: a cada repartidor se le asigna un único tipo de pizza, el
+  identificador del repartidor indica la posición dentro del listado
+  de pizzas que él puede entregar.
+
+  *Argumento*:
+    1. Lista de los códigos de los repartidores disponibles. - =[1, 3,
+       6, 8]=.
+    2. Lista de tipos de pizzas que los clientes reservaron. - =["M",
+       "V", "P", "P", "H", "H", "M", "M", "P", "C"]=.
+    3. Cadena de texto con el tipo de pizza a llevar. - ='P'=.
+
+  *Salida*: Lista de repartidores disponibles para llevar este tipo de
+  pizza. - =[3, 8]=.
+
+- _(Vale 1)_ Una función llamada *faltan_repartidores*, que dada la
+  lista de todos los repartidores disponibles en la pizzería y los
+  repartidores que ya tienen una entrega asignada, consulte cuales
+  repartidores aún están disponibles para hacer domicilios.
+
+  *Argumento*:
+    1. Lista de los códigos de los repartidores. - =[3, 5, 7, 10, 15,
+       16]=.
+    2. Lista de los códigos de los repartidores que ya tienen un una
+       entrega asignada. - =[4, 10, 5, 8]=.
+
+  *Salida*: Lista de repartidores disponibles para hacer domicilios. -
+  =[3, 7, 15, 16]=.
+
+- _(Vale 1)_ Una función *posible_intercambio*, que dada la lista de
+  todos los repartidores disponibles en la pizzería y otra lista con
+  los repartidores auxiliares que tiene la pizzería, consulte la
+  cantidad de repartidores auxiliares que NO están trabajando en este
+  momento en la pizzería.
+
+  *Argumento*:
+    1. Lista de los códigos de los repartidores disponibles. - =[3, 5,
+       7, 10, 15, 16]=
+    2. Lista de los códigos de los repartidores auxiliares que tiene
+       la pizzería. - =[4, 10, 5, 8]=
+  *Salida*: Cantidad de repartidores que No están trabajando en este
+  momento en la pizzería. - =2=. Los 2 repartidores auxiliares que No
+  están trabajando en la pizzería en este momento serían =[4, 8]=.
+
+Este programa no requiere entradas para su ejecución en la plataforma
+de pruebas, ni generará salidas. Debe cumplir el desarrollo antes
+mencionado, prestando especial atención a los nombres de las funciones
+indicadas en cada caso.
