@@ -18,15 +18,15 @@ enlace a tu GitHub. Por ejemplo:
 En el ciclo 1 se impartieron los fundamentos de la programación
 utilizando utilizando Python, partiendo desde los tipos de datos,
 funciones, estructuras condicionales y ciclos hasta estructuras de
-datos básicas y liberías. Los retos fueron diseñados de tal manera que
+datos básicas y librerías. Los retos fueron diseñados de tal manera que
 se pudiera realizar con los conocimientos aprendidos durante el
 transcurso del ciclo.
 
-- [[file:./reto_1/][Reto 1]]
+- [[file:./reto_1][Reto 1]]
 - [[file:./reto_2][Reto 2]]
 - [[file:./reto_3][Reto 3]]
 - [[file:./reto_4][Reto 4]]
-- Reto 5 /(Aun no disponible)/
+- [[file:./reto_5][Reto 5]]
 
 *** Ciclo 2 - Java
 El ciclo 2 aun no se encuentra documentado, estará aquí próximamente.
