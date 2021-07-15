@@ -96,7 +96,7 @@ def checkList(list1, list2):
     return iguales
 
 
-#print(valoresIguales('files/persona1.Json', 'files/persona2.Json'))
+print(valoresIguales('files/persona1.Json', 'files/persona2.Json'))
 
 '''
 Desarrolle un programa que lea un archivo JSON, en el cual se

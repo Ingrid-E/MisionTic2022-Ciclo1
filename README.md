@@ -1256,7 +1256,7 @@ ventasPaises.head(3)
 # 996  1/12/2009 21:30  Product1   1200  ...  3/1/2009 10:14  43.073060  -89.401110
 #[997 rows x 12 columns]
 cantidadPais = Counter(ventasPaises["Country"])
-print(cantidadPais) # diccionario con la cantidad de veces que aparece 
+print(cantidadPais) # diccionario con la cantidad de veces que aparece
                     # un pais en el archivo
 print(cantidadPais.most_common(3)) #[('United States', 462), ('United Kingdom', 100), ('Canada', 76)]
 
@@ -1270,6 +1270,13 @@ A = (ventasPaises['Transaction_date']
 G = A.plot(x="date", y="num ventas", color="green", title="Ventas por fecha")
 plt.show()
 ```
+## Funciones
+8/07/2021 <br>
 
+Existen dos tipos de funciones:
+*   Incluidas en el lenguaje
+*   Definidas por el usuario
+
+Las funciones pueden tener o no argumentos y retornar o no valores
 
 
