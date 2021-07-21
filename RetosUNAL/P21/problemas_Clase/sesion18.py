@@ -19,7 +19,7 @@ with open('files/SalesJan2009.csv', 'r') as ventas:
             count += 1
         salesJan2009.append(Dict)
 
-def contarCantidad(dato, tipo):
+def contarCantidad(dato:str, tipo:str)->int:
     cantidad = 0;
     for fila in salesJan2009:
         if fila[tipo] == dato:
